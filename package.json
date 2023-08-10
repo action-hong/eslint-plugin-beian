@@ -1,13 +1,17 @@
 {
   "name": "eslint-plugin-beian",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "remind developers that the code needs to put on record",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "beian",
+  "author": "kkopite <kkopitehong@foxmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/action-hong/eslint-plugin-beian.git"
+  },
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "scripts": {
@@ -18,6 +22,7 @@
     "update:eslint-docs": "eslint-doc-generator"
   },
   "dependencies": {
+    "@eslint-community/eslint-utils": "^4.4.0",
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
