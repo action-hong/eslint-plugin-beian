@@ -12,26 +12,31 @@
     "type": "git",
     "url": "git+https://github.com/action-hong/eslint-plugin-beian.git"
   },
-  "main": "./lib/index.js",
-  "exports": "./lib/index.js",
+  "main": "./dist/index.cjs",
+  "exports": "./dist/index.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "lint": "npm-run-all \"lint:*\"",
-    "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
-    "lint:js": "eslint .",
-    "test": "mocha tests --recursive",
-    "update:eslint-docs": "eslint-doc-generator"
+    "build": "rimraf dist && unbuild",
+    "stub": "unbuild --stub",
+    "test": "vitest",
+    "prepublishOnly": "nr build"
   },
   "dependencies": {
-    "@eslint-community/eslint-utils": "^4.4.0",
-    "requireindex": "^1.2.0"
+    "@typescript-eslint/parser": "^6.4.0",
+    "@typescript-eslint/utils": "^6.4.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/rule-tester": "^6.4.0",
     "eslint": "^8.19.0",
     "eslint-doc-generator": "^1.0.0",
     "eslint-plugin-eslint-plugin": "^5.0.0",
     "eslint-plugin-node": "^11.1.0",
-    "mocha": "^10.0.0",
-    "npm-run-all": "^4.1.5"
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1",
+    "vitest": "^0.34.1"
   },
   "engines": {
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"

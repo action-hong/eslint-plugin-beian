@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    // https://github.com/typescript-eslint/typescript-eslint/issues/7284
+    "moduleResolution": "Bundler",
+    "module": "ESNext"
+  }
+}
