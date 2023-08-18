@@ -27,7 +27,6 @@
   "dependencies": {
     "@typescript-eslint/parser": "^6.4.0",
     "@typescript-eslint/utils": "^6.4.0",
-    "add": "^2.0.6",
     "bumpp": "^9.1.1"
   },
   "devDependencies": {
@@ -53,7 +52,7 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "{*.ts, *.js}": "eslint --fix"
   },
   "license": "ISC"
 }

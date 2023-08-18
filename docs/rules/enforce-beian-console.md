@@ -20,17 +20,17 @@ Examples of **incorrect** code for this rule:
 
 ```js
 /* eslint beian/enforce-beian-console: "error" */
-console.log('This is a log message');
-console.warn('This is a log message');
-console.error('This is a log message');
+console.log('This is a log message')
+console.warn('This is a log message')
+console.error('This is a log message')
 ```
 
 Example of **correct** code for this rule:
 
 ```js
 /* eslint beian/enforce-beian-console: "error" */
-console.log('[已备案]', 'This is a log message');
-console.warn('[已备案]','This is a log message');
+console.log('[已备案]', 'This is a log message')
+console.warn('[已备案]','This is a log message')
 ```
 
 ## Options
@@ -43,8 +43,8 @@ Examples of additional **correct** code for this rule with a sample `{ "allow": 
 
 ```js
 /* eslint beian/enforce-beian-console: ["error", { allow: ["error", "warn"] }] */
-console.warn('This is a log message');
-console.error('This is a log message');
+console.warn('This is a log message')
+console.error('This is a log message')
 ```
 
 ## When Not To Use It
