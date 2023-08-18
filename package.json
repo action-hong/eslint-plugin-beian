@@ -21,11 +21,14 @@
     "build": "rimraf dist && unbuild",
     "stub": "unbuild --stub",
     "test": "vitest",
-    "prepublishOnly": "nr build"
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish"
   },
   "dependencies": {
     "@typescript-eslint/parser": "^6.4.0",
-    "@typescript-eslint/utils": "^6.4.0"
+    "@typescript-eslint/utils": "^6.4.0",
+    "add": "^2.0.6",
+    "bumpp": "^9.1.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.4.0",
@@ -34,6 +37,8 @@
     "eslint-doc-generator": "^1.0.0",
     "eslint-plugin-eslint-plugin": "^5.0.0",
     "eslint-plugin-node": "^11.1.0",
+    "lint-staged": "^14.0.0",
+    "simple-git-hooks": "^2.9.0",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1",
     "vitest": "^0.34.1"
@@ -43,6 +48,12 @@
   },
   "peerDependencies": {
     "eslint": ">=7"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   },
   "license": "ISC"
 }
